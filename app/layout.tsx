@@ -1,26 +1,30 @@
-// src/app/layout.js
+// app/layout.tsx
 
-import './globals.css'; // 确保你的全局样式导入
-import { Inter } from 'next/font/google';
+import './globals.css';
+import type { Metadata } from 'next'; 
+import React from 'react'; // 导入 React 以使用其类型定义
 
-const inter = Inter({ subsets: ['latin'] });
-
-export const metadata = {
-  title: 'GI YouTube Trending Dashboard',
-  description: 'Genshin Impact YouTube Trending Dashboard with Filtering and Search.',
+const inter = {
+    className: 'font-sans', // 使用 Tailwind CSS 的默认字体类
 };
 
-export default function RootLayout({ children }) {
-  // 核心：添加 data-theme 属性用于管理夜间模式状态
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        {/*
-          Night mode is managed by adding/removing the 'dark' class on the HTML tag.
-          The actual switch button logic is placed in the VideoFilterList component.
-        */}
-        {children}
-      </body>
-    </html>
-  );
+export const metadata: Metadata = {
+  title: 'YouTube Trending Dashboard',
+  description: 'Data visualization for YouTube trending data',
+};
+
+// === 核心修改: 定义 RootLayoutProps 接口 ===
+interface RootLayoutProps {
+    children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
+    return (
+        // 移除了之前的 dark mode setup (如 suppressHydrationWarning)，确保简洁。
+        <html lang="en"> 
+            <body className={inter.className}>
+                {children}
+            </body>
+        </html>
+    );
 }
