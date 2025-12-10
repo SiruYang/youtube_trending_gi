@@ -7,30 +7,43 @@ import Link from 'next/link';
 import Image from 'next/image'; 
 import { Sun, Moon, Search } from 'lucide-react'; 
 
-// 地区列表 (保持不变)
+
+// 地区列表 (已更新)
 const REGION_LIST = [
     { Code: 'US', name: 'United States' }, { Code: 'DE', name: 'Germany' },
     { Code: 'FR', name: 'France' }, { Code: 'MX', name: 'Mexico' }, 
     { Code: 'BR', name: 'Brazil' }, { Code: 'ID', name: 'Indonesia' },
-    { Code: 'JP', name: 'Japan' }, { Code: 'KR', name: 'South Korea' },
+    { Code: 'JP', name: 'Japan' }, { Code: 'KR', name: 'South Korea' }, // 保持 KR
     { Code: 'TW', name: 'Taiwan' }, { Code: 'VN', name: 'Vietnam' },
     { Code: 'GB', name: 'United Kingdom' }, { Code: 'TH', name: 'Thailand' },
     { Code: 'AE', name: 'United Arab Emirates' }, { Code: 'SA', name: 'Saudi Arabia' },
     { Code: 'QA', name: 'Qatar' }, { Code: 'SG', name: 'Singapore' },
-    { Code: 'KR', name: 'Korea (Republic of)' },
+    // 新增地区:
+    { Code: 'MO', name: 'Macao' },
+    { Code: 'PH', name: 'Philippines' },
+    { Code: 'HK', name: 'Hong Kong' },
 ];
 
-// 映射表和颜色 (保持不变)
+// 映射表 (保持不变，但基于新的 LIST 构建)
 const REGION_MAP = REGION_LIST.reduce((acc, region) => {
     acc[region.name] = region.Code;
     return acc;
 }, { 'N/A': 'N/A' });
 
+// 更新后的地区颜色映射表 (新增 MO, PH, HK 的颜色)
 const REGION_COLORS = {
+    // 现有颜色
     US: 'bg-blue-500', JP: 'bg-red-500', KR: 'bg-yellow-500', TW: 'bg-green-500', 
     SG: 'bg-purple-500', TH: 'bg-teal-500', DE: 'bg-pink-500', FR: 'bg-indigo-500', 
     MX: 'bg-orange-500', BR: 'bg-cyan-500', ID: 'bg-lime-500', VN: 'bg-emerald-500', 
     GB: 'bg-sky-500', AE: 'bg-rose-500', SA: 'bg-fuchsia-500', QA: 'bg-amber-500', 
+    
+    // 新增颜色
+    MO: 'bg-red-400',       // 澳门 (较浅的红色)
+    PH: 'bg-blue-700',      // 菲律宾 (较深的蓝色)
+    HK: 'bg-yellow-700',    // 香港 (较深的黄色/金色)
+    
+    // 默认颜色
     '': 'bg-gray-500', 'N/A': 'bg-gray-500',
 };
 
