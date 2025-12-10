@@ -9,8 +9,7 @@ const FULL_REGION_NAMES = [
     'United States', 'Germany', 'France', 'Mexico', 
     'Brazil', 'Indonesia', 'Japan', 'South Korea', 
     'Taiwan', 'Vietnam', 'United Kingdom', 'Thailand', 
-    'United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Singapore',
-    'Macao', 'Philippines', 'Hong Kong' // 新增的地区
+    'United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Singapore', 'Philippines', 'Hong Kong' // 新增的地区
 ].sort(); // 保持排序
 
 // === 请用您的 Google App Script URL 替换此行 ===

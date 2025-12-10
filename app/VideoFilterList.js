@@ -19,7 +19,6 @@ const REGION_LIST = [
     { Code: 'AE', name: 'United Arab Emirates' }, { Code: 'SA', name: 'Saudi Arabia' },
     { Code: 'QA', name: 'Qatar' }, { Code: 'SG', name: 'Singapore' },
     // 新增地区:
-    { Code: 'MO', name: 'Macao' },
     { Code: 'PH', name: 'Philippines' },
     { Code: 'HK', name: 'Hong Kong' },
 ];
@@ -39,7 +38,6 @@ const REGION_COLORS = {
     GB: 'bg-sky-500', AE: 'bg-rose-500', SA: 'bg-fuchsia-500', QA: 'bg-amber-500', 
     
     // 新增颜色
-    MO: 'bg-red-400',       // 澳门 (较浅的红色)
     PH: 'bg-blue-700',      // 菲律宾 (较深的蓝色)
     HK: 'bg-yellow-700',    // 香港 (较深的黄色/金色)
     
